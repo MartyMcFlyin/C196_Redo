@@ -12,6 +12,7 @@ public class Term {
     private String startDate;
     private String endDate;
     private String termNotes;
+    private int i = 0;
 
     public Term(int termID, String termName, String startDate, String endDate, String termNotes) {
         this.termID = termID;
