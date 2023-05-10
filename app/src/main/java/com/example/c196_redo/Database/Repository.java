@@ -18,6 +18,9 @@ public class Repository {
     private ExamDAO mexamDAO;
     private TermDAO mtermDAO;
 
+    //Testing Git Commit
+    private int i = 0;
+
     private List<Term> mAllTerms;
     private List<Course> mAllCourses;
     private List<Exam> mAllExams;
