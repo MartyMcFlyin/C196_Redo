@@ -21,12 +21,11 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
 
     class CourseViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView courseItemView;
+    //    private TextView courseItemView;
         private TextView courseItemView2;
 
         private CourseViewHolder(View itemView) {
             super(itemView);
-            courseItemView = itemView.findViewById(R.id.textView4);
             courseItemView2 = itemView.findViewById(R.id.textView5);
             itemView.setOnClickListener(new OnClickListener() {
                 @Override
@@ -71,11 +70,11 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
             Course current = mCourses.get(position);
             String name = current.getCourseName();
             int termID = current.getTermID();
-            holder.courseItemView.setText(name);
+      //      holder.courseItemView.setText(name);
             holder.courseItemView2.setText(Integer.toString(termID));
         } else {
-            holder.courseItemView.setText("No part name");
-            holder.courseItemView.setText("No product id");
+     //       holder.courseItemView.setText("No part name");
+    //        holder.courseItemView.setText("No product id");
         }
     }
 

@@ -17,7 +17,6 @@ import com.example.c196_redo.Database.Repository;
 import com.example.c196_redo.Entities.Course;
 import com.example.c196_redo.Entities.Term;
 import com.example.c196_redo.R;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -74,16 +73,6 @@ public class TermDetails extends AppCompatActivity {
         }
         courseAdapter.setCourses(filteredCourses);
 
-        FloatingActionButton fab = findViewById(R.id.floatingActionButton2);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(TermDetails.this, CourseDetails.class);
-                intent.putExtra("termID", id);
-                startActivity(intent);
-            }
-        });
-
         Button bbutton = findViewById(R.id.backBtn);
         bbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,11 +101,18 @@ public class TermDetails extends AppCompatActivity {
                         id = repository.getAllTerms().get(repository.getAllTerms().size() - 1).getTermID() + 1;
                     term = new Term(id, editName.getText().toString(), etermStart.getText().toString(), etermEnd.getText().toString(), etermNotes.getText().toString());
                     repository.insertTerm(term);
+                    Intent intent1 = new Intent(TermDetails.this, TermList.class);
+                    startActivity(intent1);
+
                 } else {
                     term = new Term(id, editName.getText().toString(), etermStart.getText().toString(), etermEnd.getText().toString(), etermNotes.getText().toString());
                     repository.updateTerm(term);
+                    Intent intent1 = new Intent(TermDetails.this, TermList.class);
+                    startActivity(intent1);
                 }
+
                 return true;
+
             case R.id.delTerm:
                 for (Term term2 : repository.getAllTerms()) {
                     if (term2.getTermID() == id) currentTerm = term2;
