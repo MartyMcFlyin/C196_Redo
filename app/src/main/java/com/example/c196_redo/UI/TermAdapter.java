@@ -21,7 +21,6 @@ public class TermAdapter extends RecyclerView.Adapter<TermAdapter.TermViewHolder
     private final Context context;
     private final LayoutInflater mInflater;
 
-
     class TermViewHolder extends RecyclerView.ViewHolder {
         private TextView termItemView;
 
@@ -34,11 +33,11 @@ public class TermAdapter extends RecyclerView.Adapter<TermAdapter.TermViewHolder
                     int position = getAdapterPosition();
                     final Term current = mTerms.get(position);
                     Intent intent = new Intent(context, TermDetails.class);
-                    intent.putExtra("Name", current.getTermName());
-                    intent.putExtra("Start", current.getStartDate());
-                    intent.putExtra("Start", current.getEndDate());
-                    intent.putExtra("Notes", current.getTermNotes());
-                    intent.putExtra("ID", current.getTermID());
+                    intent.putExtra("name", current.getTermName());
+                    intent.putExtra("start", current.getStartDate());
+                    intent.putExtra("end", current.getEndDate());
+                    intent.putExtra("notes", current.getTermNotes());
+                    intent.putExtra("id", current.getTermID());
                     context.startActivity(intent);
                 }
             });

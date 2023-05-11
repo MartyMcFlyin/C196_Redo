@@ -3,8 +3,6 @@ package com.example.c196_redo.Entities;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-import java.util.Date;
-
 @Entity(tableName = "coursesTable")
 public class Course {
     @PrimaryKey(autoGenerate = true)
@@ -12,16 +10,17 @@ public class Course {
     private String courseName;
     private String startDate;
     private String endDate;
+    private String courseNotes;
+    private int termID;
 
-    public Course(int courseID, String courseName, String startDate, String endDate, String courseNotes) {
+    public Course(int courseID, String courseName, String startDate, String endDate, String courseNotes, int termID) {
         this.courseID = courseID;
         this.courseName = courseName;
         this.startDate = startDate;
         this.endDate = endDate;
         this.courseNotes = courseNotes;
+        this.termID = termID;
     }
-
-    private String courseNotes;
 
     public int getCourseID() {
         return courseID;
@@ -62,4 +61,8 @@ public class Course {
     public void setCourseNotes(String courseNotes) {
         this.courseNotes = courseNotes;
     }
+
+    public int getTermID() {return termID;}
+
+    public void setTermID(int productID) {this.termID = productID;}
 }

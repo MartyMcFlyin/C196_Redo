@@ -28,7 +28,7 @@ public class CourseList extends AppCompatActivity {
         Repository repo=new Repository(getApplication());
         List<Course> courses=repo.getAllCourses();
         final CourseAdapter adapter=new CourseAdapter(this);
-        adapter.setmCourses(courses);
+        adapter.setCourses(courses);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -52,24 +52,12 @@ public class CourseList extends AppCompatActivity {
     }
 
     public boolean onOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_a, menu);
+        getMenuInflater().inflate(R.menu.menu_a_term, menu);
         return true;
     }
 
     public boolean onOptionsSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.addMenuOp:
-                Button cbutton = findViewById(R.id.courseBtn);
-                cbutton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v1) {
-                        Intent intent = new Intent(CourseList.this, CourseDetails.class);
-                        startActivity(intent);
-                    }
 
-                });
-                return true;
-        }
         return super.onOptionsItemSelected(item);
     }
 

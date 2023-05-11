@@ -7,13 +7,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.c196_redo.Database.Repository;
-import com.example.c196_redo.Entities.Course;
-import com.example.c196_redo.Entities.Exam;
-import com.example.c196_redo.Entities.Term;
 import com.example.c196_redo.R;
-
-import java.util.UUID;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -51,18 +45,18 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-
+/**
+//aDD A SET OF DATA TO THE DB
         String random = UUID.randomUUID().toString();
         Term term = new Term(0, random, "1/1/2024", "1/2/2024", "Yada Yada Yada");
-        Course course = new Course(0, random, "2/1/2024", "2/2/2024", "Yuda Yuda Yuda");
+        Course course = new Course(0, random, "2/1/2024", "2/2/2024", "Yuda Yuda Yuda", 1);
         Exam exam = new Exam(0, random, "3/1/2024", "3/2/2024", "Yoa Yoda Yoda");
         Repository repository = new Repository(getApplication());
-
-        //aDD A SET OF DATA TO THE DB
-     //   repository.insertTerm(term);
-     //   repository.insertCourse(course);
-     //   repository.insertExam(exam);
-
+        repository.insertTerm(term);
+        repository.insertCourse(course);
+        repository.insertExam(exam);
+//eND A SET OF DATA TO THE DB
+*/
 
     }
 

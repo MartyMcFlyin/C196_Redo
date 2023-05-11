@@ -53,25 +53,14 @@ public class ExamList extends AppCompatActivity {
     }
 
     public boolean onOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_a, menu);
+        getMenuInflater().inflate(R.menu.menu_a_term, menu);
         return true;
     }
 
     public boolean onOptionsSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.addMenuOp:
-                Button ebutton = findViewById(R.id.examBtn);
-                ebutton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v1) {
-                        Intent intent = new Intent(ExamList.this, ExamDetails.class);
-                        startActivity(intent);
-                    }
 
-                });
                 return true;
-        }
-        return super.onOptionsItemSelected(item);
+
     }
 
 }

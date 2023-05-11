@@ -22,7 +22,7 @@
             android:id="@+id/termID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:hint="termID"
             tools:layout_editor_absoluteX="80dp"
             tools:layout_editor_absoluteY="16dp" />
 
@@ -35,7 +35,7 @@
             android:id="@+id/termName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="termName"
+            android:hint="termName"
             tools:layout_editor_absoluteX="80dp"
             tools:layout_editor_absoluteY="68dp" />
 
@@ -48,7 +48,7 @@
             android:id="@+id/termStart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="termStart"
+            android:hint="termStart"
             tools:layout_editor_absoluteX="80dp"
             tools:layout_editor_absoluteY="118dp" />
 
@@ -68,7 +68,7 @@
             android:id="@+id/termEnd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="termEnd"
+            android:hint="termEnd"
             tools:layout_editor_absoluteX="80dp"
             tools:layout_editor_absoluteY="163dp" />
 
@@ -87,7 +87,6 @@
             android:text="Notes:" />
 
 
-
     </LinearLayout>
 
     <EditText
@@ -95,7 +94,7 @@
         android:layout_width="409dp"
         android:layout_height="259dp"
         android:layout_marginStart="1dp"
-        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In eu mi bibendum neque egestas congue quisque egestas diam. Lorem ipsum dolor sit amet consectetur. Elit at imperdiet dui accumsan sit. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla. Nibh venenatis cras sed felis eget velit aliquet. Neque ornare aenean euismod elementum. A erat nam at lectus urna duis convallis convallis. Enim neque volutpat ac tincidunt vitae semper quis lectus. Tristique senectus et netus et. Aliquet bibendum enim facilisis gravida. Diam in arcu cursus euismod. Enim sed faucibus turpis in eu mi bibendum neque. Cursus risus at ultrices mi. A erat nam at lectus urna duis convallis convallis.  Sed id semper risus in hendrerit gravida rutrum. Leo vel orci porta non pulvinar neque laoreet suspendisse interdum. Nullam ac tortor vitae purus faucibus ornare suspendisse sed nisi. Sociis natoque penatibus et magnis. Ac orci phasellus egestas tellus rutrum tellus. Viverra tellus in hac habitasse platea dictumst. Risus nullam eget felis eget nunc lobortis mattis. Augue interdum velit euismod in pellentesque massa placerat. Nulla aliquet porttitor lacus luctus accumsan tortor posuere ac ut. Amet consectetur adipiscing elit duis tristique sollicitudin nibh sit amet. Purus in mollis nunc sed id semper risus. Mattis molestie a iaculis at erat. Massa eget egestas purus viverra accumsan in. Leo duis ut diam quam.  Iaculis nunc sed augue lacus viverra vitae congue. Nec ultrices dui sapien eget mi proin sed libero. Blandit cursus risus at ultrices mi tempus. Vulputate ut pharetra sit amet aliquam id diam maecenas. Eget arcu dictum varius duis at consectetur lorem. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Ornare arcu odio ut sem nulla. Sem fringilla ut morbi tincidunt augue interdum. Faucibus scelerisque eleifend donec pretium vulputate. Vel elit scelerisque mauris pellentesque pulvinar. Ac tortor vitae purus faucibus ornare. Venenatis tellus in metus vulputate eu scelerisque felis imperdiet. Hendrerit dolor magna eget est lorem ipsum dolor sit. Pellentesque habitant morbi tristique senectus et. Et pharetra pharetra massa massa ultricies mi quis hendrerit dolor. Nibh cras pulvinar mattis nunc sed blandit libero volutpat."
+        android:hint="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In eu mi bibendum neque egestas congue quisque egestas diam. Lorem ipsum dolor sit amet consectetur. Elit at imperdiet dui accumsan sit. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla. Nibh venenatis cras sed felis eget velit aliquet. Neque ornare aenean euismod elementum. A erat nam at lectus urna duis convallis convallis. Enim neque volutpat ac tincidunt vitae semper quis lectus. Tristique senectus et netus et. Aliquet bibendum enim facilisis gravida. Diam in arcu cursus euismod. Enim sed faucibus turpis in eu mi bibendum neque. Cursus risus at ultrices mi. A erat nam at lectus urna duis convallis convallis.  Sed id semper risus in hendrerit gravida rutrum. Leo vel orci porta non pulvinar neque laoreet suspendisse interdum. Nullam ac tortor vitae purus faucibus ornare suspendisse sed nisi. Sociis natoque penatibus et magnis. Ac orci phasellus egestas tellus rutrum tellus. Viverra tellus in hac habitasse platea dictumst. Risus nullam eget felis eget nunc lobortis mattis. Augue interdum velit euismod in pellentesque massa placerat. Nulla aliquet porttitor lacus luctus accumsan tortor posuere ac ut. Amet consectetur adipiscing elit duis tristique sollicitudin nibh sit amet. Purus in mollis nunc sed id semper risus. Mattis molestie a iaculis at erat. Massa eget egestas purus viverra accumsan in. Leo duis ut diam quam.  Iaculis nunc sed augue lacus viverra vitae congue. Nec ultrices dui sapien eget mi proin sed libero. Blandit cursus risus at ultrices mi tempus. Vulputate ut pharetra sit amet aliquam id diam maecenas. Eget arcu dictum varius duis at consectetur lorem. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Ornare arcu odio ut sem nulla. Sem fringilla ut morbi tincidunt augue interdum. Faucibus scelerisque eleifend donec pretium vulputate. Vel elit scelerisque mauris pellentesque pulvinar. Ac tortor vitae purus faucibus ornare. Venenatis tellus in metus vulputate eu scelerisque felis imperdiet. Hendrerit dolor magna eget est lorem ipsum dolor sit. Pellentesque habitant morbi tristique senectus et. Et pharetra pharetra massa massa ultricies mi quis hendrerit dolor. Nibh cras pulvinar mattis nunc sed blandit libero volutpat."
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
@@ -103,14 +102,12 @@
         android:id="@+id/backBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="141dp"
-        android:layout_marginEnd="182dp"
-        android:layout_marginBottom="38dp"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="14dp"
         android:clickable="true"
         android:text="Back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/termNotes" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/courseRecView"
@@ -118,6 +115,27 @@
         android:layout_height="371dp"
         app:layout_constraintStart_toEndOf="@+id/linearLayout"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/saveBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="14dp"
+        android:text="Save"
+        app:layout_constraintStart_toEndOf="@+id/floatingActionButton2"
+        app:layout_constraintTop_toBottomOf="@+id/termNotes" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="14dp"
+        android:clickable="true"
+        app:layout_constraintStart_toEndOf="@+id/backBtn"
+        app:layout_constraintTop_toBottomOf="@+id/termNotes"
+        app:srcCompat="@android:drawable/ic_input_add" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
