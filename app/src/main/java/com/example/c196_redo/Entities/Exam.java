@@ -10,16 +10,17 @@ public class Exam {
     private String examName;
     private String startDate;
     private String endDate;
+    private String examNotes;
+    private int courseID;
 
-    public Exam(int examID, String examName, String startDate, String endDate, String examNotes) {
+    public Exam(int examID, String examName, String startDate, String endDate, String examNotes, int courseID) {
         this.examID = examID;
         this.examName = examName;
         this.startDate = startDate;
         this.endDate = endDate;
         this.examNotes = examNotes;
+        this.courseID = courseID;
     }
-
-    private String examNotes;
 
     public int getExamID() {
         return examID;
@@ -27,6 +28,14 @@ public class Exam {
 
     public void setExamID(int examID) {
         this.examID = examID;
+    }
+
+    public int getCourseID() {
+        return courseID;
+    }
+
+    public void setCourseID(int courseID) {
+        this.courseID = courseID;
     }
 
     public String getExamName() {

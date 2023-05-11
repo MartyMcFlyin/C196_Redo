@@ -4,7 +4,7 @@
     <item android:title="Delete Term"
         android:id="@+id/delTerm"/>
 
-    <item android:title="Add Courses"
+    <item android:title="Add Course"
         android:id="@+id/addCourse"/>
 
     <item android:title="Remove Course"

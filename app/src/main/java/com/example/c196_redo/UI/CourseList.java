@@ -19,20 +19,22 @@ import java.util.List;
 
 public class CourseList extends AppCompatActivity {
 
+    private Repository repository;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course_list);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        RecyclerView recyclerView=findViewById(R.id.courseRecView);
-        Repository repo=new Repository(getApplication());
-        List<Course> courses=repo.getAllCourses();
-        final CourseAdapter adapter=new CourseAdapter(this);
-        adapter.setCourses(courses);
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        Button bbutton = findViewById(R.id.backBtn);
+        Repository repo=new Repository(getApplication());
+        List<Course> allCourses=repo.getAllCourses();
+        RecyclerView recyclerView=findViewById(R.id.courseRecView);
+        final CourseAdapter courseAdapter=new CourseAdapter(this);
+        recyclerView.setAdapter(courseAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        courseAdapter.setCourses(allCourses);
+
+        Button bbutton = findViewById(R.id.backBtn4);
         bbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v1) {
@@ -41,24 +43,52 @@ public class CourseList extends AppCompatActivity {
             }
         });
 
-        Button dbutton = findViewById(R.id.detailsBtn);
-        dbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v1) {
-                Intent intent1 = new Intent(CourseList.this, CourseDetails.class);
-                startActivity(intent1);
-            }
-        });
     }
 
-    public boolean onOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_a_term, menu);
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_a_course, menu);
         return true;
     }
 
-    public boolean onOptionsSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+//                Intent intent=new Intent(CourseDetails.this,MainActivity.class);
+//                startActivity(intent);
+                return true;
 
+            case R.id.addCourse:
+                Repository repo = new Repository(getApplication());
+
+                //aDD A SET OF DATA TO THE DB
+
+                List<Course> allCourses=repository.getAllCourses();
+                RecyclerView recyclerView=findViewById(R.id.courseRecView);
+                final CourseAdapter courseAdapter=new CourseAdapter(this);
+                recyclerView.setAdapter(courseAdapter);
+                recyclerView.setLayoutManager(new LinearLayoutManager(this));
+                courseAdapter.setCourses(allCourses);
+
+                Intent intent5 = new Intent(CourseList.this, CourseDetails.class);
+                startActivity(intent5);
+
+                return true;
+        }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Repository repo=new Repository(getApplication());
+        List<Course> allCourses = repo.getAllCourses();
+        RecyclerView recyclerView = findViewById(R.id.courseRecView);
+        final CourseAdapter courseAdapter = new CourseAdapter(this);
+        recyclerView.setAdapter(courseAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        courseAdapter.setCourses(allCourses);
+
     }
 
 }

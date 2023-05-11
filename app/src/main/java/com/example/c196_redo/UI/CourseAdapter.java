@@ -18,10 +18,13 @@ import java.util.List;
 
 public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseViewHolder> {
 
+    private final Context context;
+    private final LayoutInflater mInflater;
+    private List<Course> mCourses;
 
     class CourseViewHolder extends RecyclerView.ViewHolder {
 
-    //    private TextView courseItemView;
+        //    private TextView courseItemView;
         private TextView courseItemView2;
 
         private CourseViewHolder(View itemView) {
@@ -30,8 +33,6 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
             itemView.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
-
                     int position = getAdapterPosition();
                     final Course current = mCourses.get(position);
                     Intent intent = new Intent(context, CourseDetails.class);
@@ -47,15 +48,10 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
         }
     }
 
-    private final Context context;
-    private final LayoutInflater mInflater;
-    private List<Course> mCourses;
-
-    public CourseAdapter(Context context) {
-        mInflater = LayoutInflater.from(context);
-        this.context = context;
+    public void setCourses(List<Course> courses) {
+        mCourses = courses;
+        notifyDataSetChanged();
     }
-
 
     @NonNull
     @Override
@@ -70,23 +66,22 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
             Course current = mCourses.get(position);
             String name = current.getCourseName();
             int termID = current.getTermID();
-      //      holder.courseItemView.setText(name);
-            holder.courseItemView2.setText(Integer.toString(termID));
+            //      holder.courseItemView.setText(name);
+            holder.courseItemView2.setText(name);
         } else {
-     //       holder.courseItemView.setText("No part name");
-    //        holder.courseItemView.setText("No product id");
+
         }
     }
 
 
-    public void setCourses(List<Course> courses) {
-        mCourses = courses;
-        notifyDataSetChanged();
-    }
-
     @Override
     public int getItemCount() {
         return mCourses.size();
+    }
+
+    public CourseAdapter(Context context) {
+        mInflater = LayoutInflater.from(context);
+        this.context = context;
     }
 
 }

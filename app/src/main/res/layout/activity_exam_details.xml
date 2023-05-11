@@ -1,6 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ID" />
+
+        <EditText
+            android:id="@+id/examID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:editable="false"
+            android:hint="examID"
+            tools:layout_editor_absoluteX="80dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NAME" />
+
+        <EditText
+            android:id="@+id/examName"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:hint="examName"
+            tools:layout_editor_absoluteX="80dp"
+            tools:layout_editor_absoluteY="68dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="START" />
+
+        <EditText
+            android:id="@+id/examStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="examStart"
+            tools:layout_editor_absoluteX="80dp"
+            tools:layout_editor_absoluteY="118dp" />
+
+
+        <CheckBox
+            android:id="@+id/startAlert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alert On" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="END" />
+
+        <EditText
+            android:id="@+id/examEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="examEnd"
+            tools:layout_editor_absoluteX="80dp"
+            tools:layout_editor_absoluteY="163dp" />
+
+        <CheckBox
+            android:id="@+id/endAlert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alert On"
+            tools:layout_editor_absoluteX="170dp"
+            tools:layout_editor_absoluteY="160dp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Notes:" />
+
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/examNotes"
+        android:layout_width="409dp"
+        android:layout_height="259dp"
+        android:layout_marginStart="1dp"
+        android:hint="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In eu mi bibendum neque egestas congue quisque egestas diam. Lorem ipsum dolor sit amet consectetur. Elit at imperdiet dui accumsan sit. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla. Nibh venenatis cras sed felis eget velit aliquet. Neque ornare aenean euismod elementum. A erat nam at lectus urna duis convallis convallis. Enim neque volutpat ac tincidunt vitae semper quis lectus. Tristique senectus et netus et. Aliquet bibendum enim facilisis gravida. Diam in arcu cursus euismod. Enim sed faucibus turpis in eu mi bibendum neque. Cursus risus at ultrices mi. A erat nam at lectus urna duis convallis convallis.  Sed id semper risus in hendrerit gravida rutrum. Leo vel orci porta non pulvinar neque laoreet suspendisse interdum. Nullam ac tortor vitae purus faucibus ornare suspendisse sed nisi. Sociis natoque penatibus et magnis. Ac orci phasellus egestas tellus rutrum tellus. Viverra tellus in hac habitasse platea dictumst. Risus nullam eget felis eget nunc lobortis mattis. Augue interdum velit euismod in pellentesque massa placerat. Nulla aliquet porttitor lacus luctus accumsan tortor posuere ac ut. Amet consectetur adipiscing elit duis tristique sollicitudin nibh sit amet. Purus in mollis nunc sed id semper risus. Mattis molestie a iaculis at erat. Massa eget egestas purus viverra accumsan in. Leo duis ut diam quam.  Iaculis nunc sed augue lacus viverra vitae congue. Nec ultrices dui sapien eget mi proin sed libero. Blandit cursus risus at ultrices mi tempus. Vulputate ut pharetra sit amet aliquam id diam maecenas. Eget arcu dictum varius duis at consectetur lorem. Mollis nunc sed id semper risus in hendrerit gravida rutrum. Ornare arcu odio ut sem nulla. Sem fringilla ut morbi tincidunt augue interdum. Faucibus scelerisque eleifend donec pretium vulputate. Vel elit scelerisque mauris pellentesque pulvinar. Ac tortor vitae purus faucibus ornare. Venenatis tellus in metus vulputate eu scelerisque felis imperdiet. Hendrerit dolor magna eget est lorem ipsum dolor sit. Pellentesque habitant morbi tristique senectus et. Et pharetra pharetra massa massa ultricies mi quis hendrerit dolor. Nibh cras pulvinar mattis nunc sed blandit libero volutpat."
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <Button
+        android:id="@+id/backBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="24dp"
+        android:clickable="true"
+        android:text="Back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/examNotes" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -27,19 +27,19 @@ public class ExamAdapter extends RecyclerView.Adapter<ExamAdapter.ExamViewHolder
 
         private ExamViewHolder(View itemView) {
             super(itemView);
-            examItemView = itemView.findViewById(R.id.textView2);
+            examItemView = itemView.findViewById(R.id.textView7);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     int position = getAdapterPosition();
                     final Exam current = mExams.get(position);
                     Intent intent = new Intent(context, ExamList.class);
-                    intent.putExtra("Name", current.getExamName());
-                    intent.putExtra("Start", current.getStartDate());
-                    intent.putExtra("Start", current.getEndDate());
-                    intent.putExtra("Notes", current.getExamNotes());
-                    intent.putExtra("ID", current.getExamID());
-
+                    intent.putExtra("name", current.getExamName());
+                    intent.putExtra("start", current.getStartDate());
+                    intent.putExtra("end", current.getEndDate());
+                    intent.putExtra("notes", current.getExamNotes());
+                    intent.putExtra("id", current.getExamID());
+                    context.startActivity(intent);
                 }
             });
         }
@@ -52,8 +52,8 @@ public class ExamAdapter extends RecyclerView.Adapter<ExamAdapter.ExamViewHolder
 
     @NonNull
     @Override
-    public ExamAdapter.ExamViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = mInflater.inflate(R.layout.activity_exam_list, parent, false);
+    public ExamViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View itemView = mInflater.inflate(R.layout.exam_list_layout, parent, false);
         return new ExamViewHolder(itemView);
     }
 
@@ -64,7 +64,7 @@ public class ExamAdapter extends RecyclerView.Adapter<ExamAdapter.ExamViewHolder
             String name = current.getExamName();
             holder.examItemView.setText(name);
         } else {
-            holder.examItemView.setText("No exam name");
+      //      holder.examItemView.setText("No exam name");
         }
     }
 
