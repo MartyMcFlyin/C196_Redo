@@ -129,14 +129,13 @@ public class TermDetails extends AppCompatActivity {
                 } else {
                     Toast.makeText(TermDetails.this, "Can't delete a Term with courses", Toast.LENGTH_LONG).show();
                 }
+
                 return true;
+            //Placeholder menu options
+            case R.id.remCourse:
+
         }
-        //Placeholder menu options
-        //case R.id.remCourse:
-
         //case R.id.addCourse:
-
-
         return super.onOptionsItemSelected(item);
     }
 

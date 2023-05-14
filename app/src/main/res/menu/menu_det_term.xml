@@ -12,5 +12,4 @@
 
      <item android:title="Save"
         android:id="@+id/sendTerm"/>
-
 </menu>

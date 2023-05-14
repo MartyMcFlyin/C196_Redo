@@ -26,10 +26,10 @@ public class ExamList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exam_list);
 
-        Repository repo=new Repository(getApplication());
-        List<Exam> allExams=repo.getAllExams();
-        RecyclerView recyclerView=findViewById(R.id.examRecView);
-        final ExamAdapter examAdapter=new ExamAdapter(this);
+        Repository repo = new Repository(getApplication());
+        List<Exam> allExams = repo.getAllExams();
+        RecyclerView recyclerView = findViewById(R.id.examRecView);
+        final ExamAdapter examAdapter = new ExamAdapter(this);
         recyclerView.setAdapter(examAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         examAdapter.setExams(allExams);
@@ -51,7 +51,7 @@ public class ExamList extends AppCompatActivity {
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch(item.getItemId()) {
+        switch (item.getItemId()) {
             case android.R.id.home:
                 this.finish();
 //                Intent intent=new Intent(ExamDetails.this,MainActivity.class);
@@ -63,12 +63,12 @@ public class ExamList extends AppCompatActivity {
 
                 //aDD A SET OF DATA TO THE DB
 
-                List<Exam> allExams=repository.getAllExams();
-                RecyclerView recyclerView=findViewById(R.id.examRecView);
-                final ExamAdapter examAdapter=new ExamAdapter(this);
-                recyclerView.setAdapter(examAdapter);
-                recyclerView.setLayoutManager(new LinearLayoutManager(this));
-                examAdapter.setExams(allExams);
+                //    List<Exam> allExams=repository.getAllExams();
+                //    RecyclerView recyclerView=findViewById(R.id.examRecView);
+                //    final ExamAdapter examAdapter=new ExamAdapter(this);
+                //    recyclerView.setAdapter(examAdapter);
+                //    recyclerView.setLayoutManager(new LinearLayoutManager(this));
+                //    examAdapter.setExams(allExams);
 
                 Intent intent5 = new Intent(ExamList.this, ExamDetails.class);
                 startActivity(intent5);
@@ -81,7 +81,7 @@ public class ExamList extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        Repository repo=new Repository(getApplication());
+        Repository repo = new Repository(getApplication());
         List<Exam> allExams = repo.getAllExams();
         RecyclerView recyclerView = findViewById(R.id.examRecView);
         final ExamAdapter examAdapter = new ExamAdapter(this);

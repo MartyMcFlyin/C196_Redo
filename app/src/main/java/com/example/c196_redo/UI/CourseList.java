@@ -26,10 +26,10 @@ public class CourseList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course_list);
 
-        Repository repo=new Repository(getApplication());
-        List<Course> allCourses=repo.getAllCourses();
-        RecyclerView recyclerView=findViewById(R.id.courseRecView);
-        final CourseAdapter courseAdapter=new CourseAdapter(this);
+        Repository repo = new Repository(getApplication());
+        List<Course> allCourses = repo.getAllCourses();
+        RecyclerView recyclerView = findViewById(R.id.courseRecView);
+        final CourseAdapter courseAdapter = new CourseAdapter(this);
         recyclerView.setAdapter(courseAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         courseAdapter.setCourses(allCourses);
@@ -51,7 +51,7 @@ public class CourseList extends AppCompatActivity {
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch(item.getItemId()) {
+        switch (item.getItemId()) {
             case android.R.id.home:
                 this.finish();
 //                Intent intent=new Intent(CourseDetails.this,MainActivity.class);
@@ -59,16 +59,16 @@ public class CourseList extends AppCompatActivity {
                 return true;
 
             case R.id.addCourse:
-                Repository repo = new Repository(getApplication());
+                //   Repository repo = new Repository(getApplication());
 
                 //aDD A SET OF DATA TO THE DB
 
-                List<Course> allCourses=repository.getAllCourses();
-                RecyclerView recyclerView=findViewById(R.id.courseRecView);
-                final CourseAdapter courseAdapter=new CourseAdapter(this);
-                recyclerView.setAdapter(courseAdapter);
-                recyclerView.setLayoutManager(new LinearLayoutManager(this));
-                courseAdapter.setCourses(allCourses);
+                // List<Course> allCourses=repository.getAllCourses();
+                //  RecyclerView recyclerView=findViewById(R.id.courseRecView);
+                //    final CourseAdapter courseAdapter=new CourseAdapter(this);
+                //    recyclerView.setAdapter(courseAdapter);
+                //     recyclerView.setLayoutManager(new LinearLayoutManager(this));
+                //    courseAdapter.setCourses(allCourses);
 
                 Intent intent5 = new Intent(CourseList.this, CourseDetails.class);
                 startActivity(intent5);
@@ -81,7 +81,7 @@ public class CourseList extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        Repository repo=new Repository(getApplication());
+        Repository repo = new Repository(getApplication());
         List<Course> allCourses = repo.getAllCourses();
         RecyclerView recyclerView = findViewById(R.id.courseRecView);
         final CourseAdapter courseAdapter = new CourseAdapter(this);

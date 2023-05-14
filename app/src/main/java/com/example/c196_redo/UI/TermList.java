@@ -27,13 +27,12 @@ public class TermList extends AppCompatActivity {
         setContentView(R.layout.activity_term_list);
 
         /**Need floating?
-        FloatingActionButton fab = findViewById(R.id.floatingActionButton);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent4 = new Intent(TermList.this, TermDetails.class);
-                startActivity(intent4);
-            }
+         FloatingActionButton fab = findViewById(R.id.floatingActionButton);
+         fab.setOnClickListener(new View.OnClickListener() {
+        @Override public void onClick(View view) {
+        Intent intent4 = new Intent(TermList.this, TermDetails.class);
+        startActivity(intent4);
+        }
         });*/
 
         repository = new Repository(getApplication());
@@ -43,8 +42,6 @@ public class TermList extends AppCompatActivity {
         recyclerView.setAdapter(termAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         termAdapter.setTerms(allTerms);
-
-
 
 
         Button bbutton = findViewById(R.id.backBtn);
@@ -65,7 +62,7 @@ public class TermList extends AppCompatActivity {
 
 
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch(item.getItemId()) {
+        switch (item.getItemId()) {
             case android.R.id.home:
                 this.finish();
 //                Intent intent=new Intent(TermDetails.this,MainActivity.class);
@@ -75,14 +72,16 @@ public class TermList extends AppCompatActivity {
             case R.id.addTerm:
                 Repository repo = new Repository(getApplication());
 
+
+
                 //aDD A SET OF DATA TO THE DB
 
-                List<Term> allTerms=repository.getAllTerms();
-                RecyclerView recyclerView=findViewById(R.id.termRecView);
-                final TermAdapter termAdapter=new TermAdapter(this);
-                recyclerView.setAdapter(termAdapter);
-                recyclerView.setLayoutManager(new LinearLayoutManager(this));
-                termAdapter.setTerms(allTerms);
+                //    List<Term> allTerms=repository.getAllTerms();
+                //    RecyclerView recyclerView=findViewById(R.id.termRecView);
+                //    final TermAdapter termAdapter=new TermAdapter(this);
+                //    recyclerView.setAdapter(termAdapter);
+                //    recyclerView.setLayoutManager(new LinearLayoutManager(this));
+                //    termAdapter.setTerms(allTerms);
 
                 Intent intent5 = new Intent(TermList.this, TermDetails.class);
                 startActivity(intent5);

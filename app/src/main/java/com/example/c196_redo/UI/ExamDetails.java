@@ -56,6 +56,9 @@ public class ExamDetails extends AppCompatActivity {
         eexamID = findViewById(R.id.examID);
         eexamID.setText(String.valueOf(id));
 
+        repository = new Repository(getApplication());
+
+
         Button bbutton = findViewById(R.id.backBtn);
         bbutton.setOnClickListener(new View.OnClickListener() {
             @Override
