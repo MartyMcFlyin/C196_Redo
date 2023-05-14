@@ -45,6 +45,15 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
+        Button qbutton = findViewById(R.id.quitBtn);
+        qbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v3) {
+                System.exit(0);
+            }
+
+        });
+
 /**
  //aDD A SET OF DATA TO THE DB
  String random = UUID.randomUUID().toString();
@@ -59,6 +68,4 @@ public class MainActivity extends AppCompatActivity {
  */
 
     }
-
-    //Final }
 }

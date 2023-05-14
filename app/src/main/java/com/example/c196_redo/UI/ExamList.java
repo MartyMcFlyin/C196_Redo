@@ -34,7 +34,7 @@ public class ExamList extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         examAdapter.setExams(allExams);
 
-        Button bbutton = findViewById(R.id.backBtn6);
+        Button bbutton = findViewById(R.id.backBtn);
         bbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v1) {
@@ -51,32 +51,25 @@ public class ExamList extends AppCompatActivity {
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                this.finish();
-//                Intent intent=new Intent(ExamDetails.this,MainActivity.class);
+     switch (item.getItemId()) {
+        case android.R.id.home:
+            this.finish();
+//                Intent intent=new Intent(TermDetails.this,MainActivity.class);
 //                startActivity(intent);
-                return true;
+            return true;
 
-            case R.id.addExam:
-                Repository repo = new Repository(getApplication());
+        case R.id.addExam:
 
-                //aDD A SET OF DATA TO THE DB
+            //aDD A SET OF DATA TO THE DB
+            Repository repo = new Repository(getApplication());
+            Intent intent8 = new Intent(ExamList.this, ExamDetails.class);
+            startActivity(intent8);
 
-                //    List<Exam> allExams=repository.getAllExams();
-                //    RecyclerView recyclerView=findViewById(R.id.examRecView);
-                //    final ExamAdapter examAdapter=new ExamAdapter(this);
-                //    recyclerView.setAdapter(examAdapter);
-                //    recyclerView.setLayoutManager(new LinearLayoutManager(this));
-                //    examAdapter.setExams(allExams);
-
-                Intent intent5 = new Intent(ExamList.this, ExamDetails.class);
-                startActivity(intent5);
-
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
+            return true;
     }
+        return super.onOptionsItemSelected(item);
+}
+
 
     @Override
     protected void onResume() {

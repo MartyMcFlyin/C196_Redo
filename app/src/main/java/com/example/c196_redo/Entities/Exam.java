@@ -11,14 +11,16 @@ public class Exam {
     private String startDate;
     private String endDate;
     private String examNotes;
+    private boolean examTypePerf;
     private int courseID;
 
-    public Exam(int examID, String examName, String startDate, String endDate, String examNotes, int courseID) {
+    public Exam(int examID, String examName, String startDate, String endDate, String examNotes, boolean examTypePerf, int courseID) {
         this.examID = examID;
         this.examName = examName;
         this.startDate = startDate;
         this.endDate = endDate;
         this.examNotes = examNotes;
+        this.examTypePerf = examTypePerf;
         this.courseID = courseID;
     }
 
@@ -69,4 +71,14 @@ public class Exam {
     public void setExamNotes(String examNotes) {
         this.examNotes = examNotes;
     }
+
+    public boolean getExamTypePerf() {
+        return examTypePerf;
+    }
+
+    public void setExamTypePerf(boolean examTypePerf) {
+        this.examTypePerf = examTypePerf;
+    }
 }
+
+

@@ -7,9 +7,6 @@
     <item android:title="Add Course"
         android:id="@+id/addCourse"/>
 
-    <item android:title="Remove Course"
-        android:id="@+id/remCourse"/>
-
      <item android:title="Save"
         android:id="@+id/sendTerm"/>
 </menu>

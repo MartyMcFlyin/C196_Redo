@@ -27,7 +27,7 @@ public class ExamAdapter extends RecyclerView.Adapter<ExamAdapter.ExamViewHolder
 
         private ExamViewHolder(View itemView) {
             super(itemView);
-            examItemView = itemView.findViewById(R.id.textView7);
+            examItemView = itemView.findViewById(R.id.examLayView);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

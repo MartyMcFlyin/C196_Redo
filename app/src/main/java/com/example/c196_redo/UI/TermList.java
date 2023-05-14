@@ -26,15 +26,6 @@ public class TermList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_term_list);
 
-        /**Need floating?
-         FloatingActionButton fab = findViewById(R.id.floatingActionButton);
-         fab.setOnClickListener(new View.OnClickListener() {
-        @Override public void onClick(View view) {
-        Intent intent4 = new Intent(TermList.this, TermDetails.class);
-        startActivity(intent4);
-        }
-        });*/
-
         repository = new Repository(getApplication());
         List<Term> allTerms = repository.getAllTerms();
         RecyclerView recyclerView = findViewById(R.id.termRecView);
@@ -42,7 +33,6 @@ public class TermList extends AppCompatActivity {
         recyclerView.setAdapter(termAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         termAdapter.setTerms(allTerms);
-
 
         Button bbutton = findViewById(R.id.backBtn);
         bbutton.setOnClickListener(new View.OnClickListener() {
@@ -70,19 +60,9 @@ public class TermList extends AppCompatActivity {
                 return true;
 
             case R.id.addTerm:
-                Repository repo = new Repository(getApplication());
-
-
 
                 //aDD A SET OF DATA TO THE DB
-
-                //    List<Term> allTerms=repository.getAllTerms();
-                //    RecyclerView recyclerView=findViewById(R.id.termRecView);
-                //    final TermAdapter termAdapter=new TermAdapter(this);
-                //    recyclerView.setAdapter(termAdapter);
-                //    recyclerView.setLayoutManager(new LinearLayoutManager(this));
-                //    termAdapter.setTerms(allTerms);
-
+                Repository repo = new Repository(getApplication());
                 Intent intent5 = new Intent(TermList.this, TermDetails.class);
                 startActivity(intent5);
 

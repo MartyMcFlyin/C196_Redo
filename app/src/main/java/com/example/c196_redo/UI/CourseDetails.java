@@ -61,7 +61,7 @@ public class CourseDetails extends AppCompatActivity {
 
         id = getIntent().getIntExtra("id", -1);
         ecourseID = findViewById(R.id.courseID);
-        ecourseID.setText(String.valueOf(id));
+        ecourseID.setText("Auto-Generated");
 
         RecyclerView recyclerView = findViewById(R.id.examRecView);
         repository = new Repository(getApplication());
@@ -95,24 +95,34 @@ public class CourseDetails extends AppCompatActivity {
                 this.finish();
                 return true;
             case R.id.sendCourse:
-                Course course;
-                if (id == -1) {
-                    if (repository.getAllCourses().size() == 0) id = 1;
-                    else
-                        id = repository.getAllCourses().get(repository.getAllCourses().size() - 1).getCourseID() + 1;
-                    course = new Course(id, editName.getText().toString(), ecourseStart.getText().toString(), ecourseEnd.getText().toString(), ecourseNotes.getText().toString(), 1);
-                    repository.insertCourse(course);
-                    Intent intent1 = new Intent(CourseDetails.this, CourseList.class);
-                    startActivity(intent1);
+                if(editName.getText() != null) {
+                    //Date Check PLACE if()
+                    Course course;
+                    if (id == -1) {
+                        if (repository.getAllCourses().size() == 0) id = 1;
+                        else
+                            id = repository.getAllCourses().get(repository.getAllCourses().size() - 1).getCourseID() + 1;
+                        course = new Course(id, editName.getText().toString(), ecourseStart.getText().toString(), ecourseEnd.getText().toString(), ecourseNotes.getText().toString(), 1, "Pending", "Aristotle", "Phone: Nope.");
+                        repository.insertCourse(course);
+                        Intent intent1 = new Intent(CourseDetails.this, CourseList.class);
+                        startActivity(intent1);
 
-                } else {
-                    course = new Course(id, editName.getText().toString(), ecourseStart.getText().toString(), ecourseEnd.getText().toString(), ecourseNotes.getText().toString(), 1);
-                    repository.updateCourse(course);
-                    Intent intent1 = new Intent(CourseDetails.this, CourseList.class);
-                    startActivity(intent1);
+                    } else {
+                        course = new Course(id, editName.getText().toString(), ecourseStart.getText().toString(), ecourseEnd.getText().toString(), ecourseNotes.getText().toString(), 1, "In Progress", "Mister Feeney", "Just across the fence-line");
+                        repository.updateCourse(course);
+                        Intent intent1 = new Intent(CourseDetails.this, CourseList.class);
+                        startActivity(intent1);
+                    }
+
+                    return true;
                 }
+                //} else Date check PLACE else
+                //Course Name Check
+                else
+                {
+                    Toast.makeText(CourseDetails.this, "Please enter a course name.", Toast.LENGTH_LONG).show();
 
-                return true;
+                }
 
             case R.id.delCourse:
                 for (Course course2 : repository.getAllCourses()) {
@@ -131,13 +141,14 @@ public class CourseDetails extends AppCompatActivity {
                     Toast.makeText(CourseDetails.this, "Can't delete a course with exam(s)", Toast.LENGTH_LONG).show();
                 }
                 return true;
+
+            case R.id.addExam:
+                Repository repo = new Repository(getApplication());
+                Intent intent7 = new Intent(CourseDetails.this, ExamDetails.class);
+                startActivity(intent7);
+
+                return true;
         }
-        //Placeholder menu options
-        //case R.id.remCourse:
-
-        //case R.id.addCourse:
-
-
         return super.onOptionsItemSelected(item);
     }
 

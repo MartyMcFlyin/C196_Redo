@@ -54,7 +54,7 @@ public class ExamDetails extends AppCompatActivity {
 
         id = getIntent().getIntExtra("id", -1);
         eexamID = findViewById(R.id.examID);
-        eexamID.setText(String.valueOf(id));
+        eexamID.setText("Auto-Generated");
 
         repository = new Repository(getApplication());
 
@@ -85,13 +85,13 @@ public class ExamDetails extends AppCompatActivity {
                     if (repository.getAllExams().size() == 0) id = 1;
                     else
                         id = repository.getAllExams().get(repository.getAllExams().size() - 1).getExamID() + 1;
-                    exam = new Exam(id, editName.getText().toString(), eexamStart.getText().toString(), eexamEnd.getText().toString(), eexamNotes.getText().toString(), 1);
+                    exam = new Exam(id, editName.getText().toString(), eexamStart.getText().toString(), eexamEnd.getText().toString(), eexamNotes.getText().toString(), false, 1);
                     repository.insertExam(exam);
                     Intent intent1 = new Intent(ExamDetails.this, ExamList.class);
                     startActivity(intent1);
 
                 } else {
-                    exam = new Exam(id, editName.getText().toString(), eexamStart.getText().toString(), eexamEnd.getText().toString(), eexamNotes.getText().toString(), 1);
+                    exam = new Exam(id, editName.getText().toString(), eexamStart.getText().toString(), eexamEnd.getText().toString(), eexamNotes.getText().toString(), false,1);
                     repository.updateExam(exam);
                     Intent intent1 = new Intent(ExamDetails.this, ExamList.class);
                     startActivity(intent1);

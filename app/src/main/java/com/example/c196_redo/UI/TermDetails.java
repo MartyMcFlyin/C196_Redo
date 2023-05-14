@@ -60,7 +60,7 @@ public class TermDetails extends AppCompatActivity {
 
         id = getIntent().getIntExtra("id", -1);
         etermID = findViewById(R.id.termID);
-        etermID.setText(String.valueOf(id));
+        etermID.setText("Auto-Generated");
 
         RecyclerView recyclerView = findViewById(R.id.courseRecView);
         repository = new Repository(getApplication());
@@ -94,24 +94,29 @@ public class TermDetails extends AppCompatActivity {
                 this.finish();
                 return true;
             case R.id.sendTerm:
-                Term term;
-                if (id == -1) {
-                    if (repository.getAllTerms().size() == 0) id = 1;
-                    else
-                        id = repository.getAllTerms().get(repository.getAllTerms().size() - 1).getTermID() + 1;
-                    term = new Term(id, editName.getText().toString(), etermStart.getText().toString(), etermEnd.getText().toString(), etermNotes.getText().toString());
-                    repository.insertTerm(term);
-                    Intent intent1 = new Intent(TermDetails.this, TermList.class);
-                    startActivity(intent1);
+                if(editName.getText() != null) {
+                    Term term;
+                    if (id == -1) {
+                        if (repository.getAllTerms().size() == 0) id = 1;
+                        else
+                            id = repository.getAllTerms().get(repository.getAllTerms().size() - 1).getTermID() + 1;
+                        term = new Term(id, editName.getText().toString(), etermStart.getText().toString(), etermEnd.getText().toString(), etermNotes.getText().toString());
+                        repository.insertTerm(term);
+                        Intent intent1 = new Intent(TermDetails.this, TermList.class);
+                        startActivity(intent1);
 
-                } else {
-                    term = new Term(id, editName.getText().toString(), etermStart.getText().toString(), etermEnd.getText().toString(), etermNotes.getText().toString());
-                    repository.updateTerm(term);
-                    Intent intent1 = new Intent(TermDetails.this, TermList.class);
-                    startActivity(intent1);
+                    } else {
+                        term = new Term(id, editName.getText().toString(), etermStart.getText().toString(), etermEnd.getText().toString(), etermNotes.getText().toString());
+                        repository.updateTerm(term);
+                        Intent intent1 = new Intent(TermDetails.this, TermList.class);
+                        startActivity(intent1);
+                    }
+
+                    return true;
                 }
-
-                return true;
+                else {
+                    Toast.makeText(TermDetails.this, "Please enter a term name.", Toast.LENGTH_LONG).show();
+                }
 
             case R.id.delTerm:
                 for (Term term2 : repository.getAllTerms()) {
@@ -131,11 +136,15 @@ public class TermDetails extends AppCompatActivity {
                 }
 
                 return true;
-            //Placeholder menu options
-            case R.id.remCourse:
 
+            case R.id.addCourse:
+                Repository repo = new Repository(getApplication());
+                Intent intent5 = new Intent(TermDetails.this, CourseDetails.class);
+                startActivity(intent5);
+
+                return true;
         }
-        //case R.id.addCourse:
+
         return super.onOptionsItemSelected(item);
     }
 

@@ -12,14 +12,20 @@ public class Course {
     private String endDate;
     private String courseNotes;
     private int termID;
+    private String courseStatus;
+    private String courseInstructor;
+    private String courseContact;
 
-    public Course(int courseID, String courseName, String startDate, String endDate, String courseNotes, int termID) {
+    public Course(int courseID, String courseName, String startDate, String endDate, String courseNotes, int termID, String courseStatus, String courseInstructor, String courseContact) {
         this.courseID = courseID;
         this.courseName = courseName;
         this.startDate = startDate;
         this.endDate = endDate;
         this.courseNotes = courseNotes;
         this.termID = termID;
+        this.courseInstructor = courseInstructor;
+        this.courseContact = courseContact;
+        this.courseStatus = courseStatus;
     }
 
     public int getCourseID() {
@@ -65,4 +71,28 @@ public class Course {
     public int getTermID() {return termID;}
 
     public void setTermID(int productID) {this.termID = productID;}
+
+    public String getCourseStatus() {
+        return courseStatus;
+    }
+
+    public void setCourseStatus(String courseStatus) {
+        this.courseStatus = courseStatus;
+    }
+
+    public String getCourseInstructor() {
+        return courseInstructor;
+    }
+
+    public void setCourseInstructor(String courseInstructor) {
+        this.courseInstructor = courseInstructor;
+    }
+
+    public String getCourseContact() {
+        return courseContact;
+    }
+
+    public void setCourseContact(String courseContact) {
+        this.courseContact = courseContact;
+    }
 }

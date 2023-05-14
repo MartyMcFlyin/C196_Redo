@@ -5,10 +5,7 @@
         android:id="@+id/delCourse"/>
 
     <item android:title="Add Exam"
-        android:id="@+id/addCourse"/>
-
-    <item android:title="Remove Exam"
-        android:id="@+id/remCourse"/>
+        android:id="@+id/addExam"/>
 
     <item android:title="Save"
         android:id="@+id/sendCourse"/>

@@ -29,7 +29,7 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
 
         private CourseViewHolder(View itemView) {
             super(itemView);
-            courseItemView2 = itemView.findViewById(R.id.textView5);
+            courseItemView2 = itemView.findViewById(R.id.courseLayView);
             itemView.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {

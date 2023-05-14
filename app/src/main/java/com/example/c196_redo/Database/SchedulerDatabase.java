@@ -14,7 +14,7 @@ import com.example.c196_redo.Entities.Exam;
 import com.example.c196_redo.Entities.Term;
 
 //Ver control for DB resets
-@Database(entities = {Course.class, Exam.class, Term.class}, version = 8, exportSchema = false)
+@Database(entities = {Course.class, Exam.class, Term.class}, version = 9, exportSchema = false)
 public abstract class SchedulerDatabase extends RoomDatabase {
 
     public abstract CourseDAO courseDAO();

@@ -34,7 +34,7 @@ public class CourseList extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         courseAdapter.setCourses(allCourses);
 
-        Button bbutton = findViewById(R.id.backBtn4);
+        Button bbutton = findViewById(R.id.backBtn);
         bbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v1) {
