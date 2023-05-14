@@ -15,8 +15,10 @@ public class Course {
     private String courseStatus;
     private String courseInstructor;
     private String courseContact;
+    boolean startOn = false;
+    boolean endOn = false;
 
-    public Course(int courseID, String courseName, String startDate, String endDate, String courseNotes, int termID, String courseStatus, String courseInstructor, String courseContact) {
+    public Course(int courseID, String courseName, String startDate, String endDate, String courseNotes, int termID, String courseStatus, String courseInstructor, String courseContact, boolean startOn, boolean endOn) {
         this.courseID = courseID;
         this.courseName = courseName;
         this.startDate = startDate;
@@ -84,9 +86,7 @@ public class Course {
         return courseInstructor;
     }
 
-    public void setCourseInstructor(String courseInstructor) {
-        this.courseInstructor = courseInstructor;
-    }
+    public void setCourseInstructor(String courseInstructor) {this.courseInstructor = courseInstructor;}
 
     public String getCourseContact() {
         return courseContact;
@@ -95,4 +95,12 @@ public class Course {
     public void setCourseContact(String courseContact) {
         this.courseContact = courseContact;
     }
+
+    public boolean isStartOn() {return startOn;}
+
+    public void setStartOn(boolean startOn) {this.startOn = startOn;}
+
+    public boolean isEndOn() {return endOn;}
+
+    public void setEndOn(boolean endOn) {this.endOn = endOn;}
 }

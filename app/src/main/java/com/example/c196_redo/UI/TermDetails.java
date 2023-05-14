@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -35,6 +36,10 @@ public class TermDetails extends AppCompatActivity {
     int id;
     Term currentTerm;
     int numCourses;
+    boolean startAlerting;
+    boolean endAlerting;
+    Switch sswitch;
+    Switch eswitch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +62,15 @@ public class TermDetails extends AppCompatActivity {
         end = getIntent().getStringExtra("end");
         etermEnd = findViewById(R.id.termEnd);
         etermEnd.setText(end);
+
+
+        sswitch = findViewById(R.id.startAlertRad);
+        startAlerting = getIntent().getBooleanExtra("salert", true);
+        sswitch.setChecked(startAlerting);
+
+        eswitch = findViewById(R.id.endAlertRad);
+        endAlerting = getIntent().getBooleanExtra("ealert", false);
+        eswitch.setChecked(endAlerting);
 
         id = getIntent().getIntExtra("id", -1);
         etermID = findViewById(R.id.termID);
@@ -96,17 +110,23 @@ public class TermDetails extends AppCompatActivity {
             case R.id.sendTerm:
                 if(editName.getText() != null) {
                     Term term;
-                    if (id == -1) {
+                    if (sswitch.isChecked()) {
+                        startAlerting = true;
+                    }
+                    if (eswitch.isChecked()) {
+                        endAlerting = true;
+                    }
+                                        if (id == -1) {
                         if (repository.getAllTerms().size() == 0) id = 1;
                         else
                             id = repository.getAllTerms().get(repository.getAllTerms().size() - 1).getTermID() + 1;
-                        term = new Term(id, editName.getText().toString(), etermStart.getText().toString(), etermEnd.getText().toString(), etermNotes.getText().toString());
+                        term = new Term(id, editName.getText().toString(), etermStart.getText().toString(), etermEnd.getText().toString(), etermNotes.getText().toString(), startAlerting, endAlerting);
                         repository.insertTerm(term);
                         Intent intent1 = new Intent(TermDetails.this, TermList.class);
                         startActivity(intent1);
 
                     } else {
-                        term = new Term(id, editName.getText().toString(), etermStart.getText().toString(), etermEnd.getText().toString(), etermNotes.getText().toString());
+                        term = new Term(id, editName.getText().toString(), etermStart.getText().toString(), etermEnd.getText().toString(), etermNotes.getText().toString(), startAlerting, endAlerting);
                         repository.updateTerm(term);
                         Intent intent1 = new Intent(TermDetails.this, TermList.class);
                         startActivity(intent1);

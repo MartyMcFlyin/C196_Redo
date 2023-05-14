@@ -54,7 +54,7 @@
 
 
         <Switch
-            android:id="@+id/startAlert"
+            android:id="@+id/startAlertRad"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:text="Alert for Start" />
@@ -73,7 +73,7 @@
             tools:layout_editor_absoluteY="163dp" />
 
         <Switch
-            android:id="@+id/endAlert"
+            android:id="@+id/endAlertRad"
             android:layout_width="match_parent"
             android:layout_height="52dp"
             android:text="Alert for End" />

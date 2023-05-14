@@ -80,21 +80,30 @@ public class ExamDetails extends AppCompatActivity {
                 this.finish();
                 return true;
             case R.id.sendExam:
-                Exam exam;
-                if (id == -1) {
-                    if (repository.getAllExams().size() == 0) id = 1;
-                    else
-                        id = repository.getAllExams().get(repository.getAllExams().size() - 1).getExamID() + 1;
-                    exam = new Exam(id, editName.getText().toString(), eexamStart.getText().toString(), eexamEnd.getText().toString(), eexamNotes.getText().toString(), false, 1);
-                    repository.insertExam(exam);
-                    Intent intent1 = new Intent(ExamDetails.this, ExamList.class);
-                    startActivity(intent1);
+                if(editName.getText() != null) {
+                    //Date Check PLACE if()
+                    Exam exam;
+                    if (id == -1) {
+                        if (repository.getAllExams().size() == 0) id = 1;
+                        else
+                            id = repository.getAllExams().get(repository.getAllExams().size() - 1).getExamID() + 1;
+                        exam = new Exam(id, editName.getText().toString(), eexamStart.getText().toString(), eexamEnd.getText().toString(), eexamNotes.getText().toString(), false, 1, false, false);
+                        repository.insertExam(exam);
+                        Intent intent1 = new Intent(ExamDetails.this, ExamList.class);
+                        startActivity(intent1);
 
-                } else {
-                    exam = new Exam(id, editName.getText().toString(), eexamStart.getText().toString(), eexamEnd.getText().toString(), eexamNotes.getText().toString(), false,1);
-                    repository.updateExam(exam);
-                    Intent intent1 = new Intent(ExamDetails.this, ExamList.class);
-                    startActivity(intent1);
+                    } else {
+                        exam = new Exam(id, editName.getText().toString(), eexamStart.getText().toString(), eexamEnd.getText().toString(), eexamNotes.getText().toString(), false, 1, false, false);
+                        repository.updateExam(exam);
+                        Intent intent1 = new Intent(ExamDetails.this, ExamList.class);
+                        startActivity(intent1);
+                    }
+                }
+                //} else Date check PLACE else
+                //Course Name Check
+                else
+                {
+                    Toast.makeText(ExamDetails.this, "Please enter an exam name.", Toast.LENGTH_LONG).show();
                 }
 
                 return true;

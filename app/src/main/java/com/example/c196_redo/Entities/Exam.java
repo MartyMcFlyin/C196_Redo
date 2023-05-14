@@ -13,8 +13,10 @@ public class Exam {
     private String examNotes;
     private boolean examTypePerf;
     private int courseID;
+    boolean startOn = false;
+    boolean endOn = false;
 
-    public Exam(int examID, String examName, String startDate, String endDate, String examNotes, boolean examTypePerf, int courseID) {
+    public Exam(int examID, String examName, String startDate, String endDate, String examNotes, boolean examTypePerf, int courseID, boolean startOn, boolean endOn) {
         this.examID = examID;
         this.examName = examName;
         this.startDate = startDate;
@@ -22,6 +24,8 @@ public class Exam {
         this.examNotes = examNotes;
         this.examTypePerf = examTypePerf;
         this.courseID = courseID;
+        this.startOn = startOn;
+        this.endOn = endOn;
     }
 
     public int getExamID() {
@@ -76,9 +80,15 @@ public class Exam {
         return examTypePerf;
     }
 
-    public void setExamTypePerf(boolean examTypePerf) {
-        this.examTypePerf = examTypePerf;
-    }
+    public void setExamTypePerf(boolean examTypePerf) {this.examTypePerf = examTypePerf;}
+
+    public boolean isStartOn() {return startOn;}
+
+    public void setStartOn(boolean startOn) {this.startOn = startOn;}
+
+    public boolean isEndOn() {return endOn;}
+
+    public void setEndOn(boolean endOn) {this.endOn = endOn;}
 }
 
 

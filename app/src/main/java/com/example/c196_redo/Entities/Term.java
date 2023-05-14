@@ -12,13 +12,17 @@ public class Term {
     private String startDate;
     private String endDate;
     private String termNotes;
+    boolean startOn = false;
+    boolean endOn = false;
 
-    public Term(int termID, String termName, String startDate, String endDate, String termNotes) {
+    public Term(int termID, String termName, String startDate, String endDate, String termNotes, boolean startOn, boolean endOn) {
         this.termID = termID;
         this.termName = termName;
         this.startDate = startDate;
         this.endDate = endDate;
         this.termNotes = termNotes;
+        this.startOn = startOn;
+        this.endOn = endOn;
     }
 
     public int getTermID() {
@@ -60,4 +64,13 @@ public class Term {
     public void setTermNotes(String termNotes) {
         this.termNotes = termNotes;
     }
+
+    public boolean isStartOn() {return startOn;}
+
+    public void setStartOn(boolean startOn) {this.startOn = startOn;}
+
+    public boolean isEndOn() {return endOn;}
+
+    public void setEndOn(boolean endOn) {this.endOn = endOn;}
 }
+

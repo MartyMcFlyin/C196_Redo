@@ -102,13 +102,13 @@ public class CourseDetails extends AppCompatActivity {
                         if (repository.getAllCourses().size() == 0) id = 1;
                         else
                             id = repository.getAllCourses().get(repository.getAllCourses().size() - 1).getCourseID() + 1;
-                        course = new Course(id, editName.getText().toString(), ecourseStart.getText().toString(), ecourseEnd.getText().toString(), ecourseNotes.getText().toString(), 1, "Pending", "Aristotle", "Phone: Nope.");
+                        course = new Course(id, editName.getText().toString(), ecourseStart.getText().toString(), ecourseEnd.getText().toString(), ecourseNotes.getText().toString(), 1, "Pending", "Aristotle", "Phone: Nope.", false, false);
                         repository.insertCourse(course);
                         Intent intent1 = new Intent(CourseDetails.this, CourseList.class);
                         startActivity(intent1);
 
                     } else {
-                        course = new Course(id, editName.getText().toString(), ecourseStart.getText().toString(), ecourseEnd.getText().toString(), ecourseNotes.getText().toString(), 1, "In Progress", "Mister Feeney", "Just across the fence-line");
+                        course = new Course(id, editName.getText().toString(), ecourseStart.getText().toString(), ecourseEnd.getText().toString(), ecourseNotes.getText().toString(), 1, "In Progress", "Mister Feeney", "Just across the fence-line", false, false);
                         repository.updateCourse(course);
                         Intent intent1 = new Intent(CourseDetails.this, CourseList.class);
                         startActivity(intent1);
